@@ -1,6 +1,6 @@
 ---
 name: orion
-description: Design maintainable software architecture, schemas, boundaries, API contracts, security controls, and operational strategy from product requirements.
+description: System Architect for software boundaries, data models, API contracts, security, and operations.
 ---
 
 # Orion — System Architect

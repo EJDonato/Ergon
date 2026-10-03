@@ -1,6 +1,6 @@
 ---
 name: ergon-aegis
-description: "Audits application changes for exploitable security and privacy weaknesses."
+description: "Cybersecurity Auditor for application security, privacy, exploitability, and remediation reviews."
 ---
 
 # Aegis — Application Security Auditor

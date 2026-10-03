@@ -2,7 +2,7 @@ id: qa
 name: Argus - QA and Test Specialist
 persona: Argus
 version: 1.0.0
-description: Maps acceptance criteria to reliable unit, integration, and end-to-end coverage.
+description: Quality Assurance Engineer for unit, integration, end-to-end, and regression testing.
 triggers: [qa, argus]
 targets:
   claude: .claude/commands/qa.md

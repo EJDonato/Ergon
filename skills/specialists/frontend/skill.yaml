@@ -2,7 +2,7 @@ id: frontend
 name: Iris - Senior Frontend Developer
 persona: Iris
 version: 1.0.0
-description: Builds accessible, responsive interfaces against verified application contracts.
+description: Senior Frontend Engineer for accessible, responsive interfaces and interaction states.
 triggers: [frontend, iris]
 targets:
   claude: .claude/commands/frontend.md

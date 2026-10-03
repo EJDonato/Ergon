@@ -1,6 +1,6 @@
 ---
 name: foundation
-description: Bootstrap a software project through four ordered market, product, architecture, and implementation-planning passes with traceable outputs.
+description: Cross-functional Product Foundation Team for market, product, architecture, and delivery planning.
 ---
 
 # Foundation — Four-pass Project Bootstrapper

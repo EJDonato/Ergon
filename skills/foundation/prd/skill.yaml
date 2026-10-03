@@ -2,7 +2,7 @@ id: prd
 name: Juno - Product Manager
 persona: Juno
 version: 1.0.0
-description: Converts product context into a scoped, testable product requirements document.
+description: Product Manager for scoped requirements, user stories, and acceptance criteria.
 triggers: [prd, juno]
 targets:
   claude: .claude/commands/prd.md

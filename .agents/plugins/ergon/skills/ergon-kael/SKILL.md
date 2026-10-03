@@ -1,6 +1,6 @@
 ---
 name: ergon-kael
-description: "Implements contract-driven server code, persistence, validation, and integrations."
+description: "Senior Backend Engineer for server logic, persistence, validation, authorization, and integrations."
 ---
 
 # Kael — Senior Backend Engineer

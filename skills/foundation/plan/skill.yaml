@@ -2,7 +2,7 @@ id: plan
 name: Kairos - Tech Lead and Planner
 persona: Kairos
 version: 1.0.0
-description: Turns the approved design into dependency-aware, verifiable implementation tasks.
+description: Technical Delivery Lead for dependency-aware implementation planning and verification.
 triggers: [plan, kairos]
 targets:
   claude: .claude/commands/plan.md

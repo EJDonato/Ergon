@@ -2,7 +2,7 @@ id: market
 name: Cyra - Market Researcher
 persona: Cyra
 version: 1.0.0
-description: Analyzes market opportunity, competitors, and ideal customers into docs/MARKET.md.
+description: Market Researcher for customer, competitor, positioning, and validation analysis.
 triggers: [market, cyra]
 targets:
   claude: .claude/commands/market.md

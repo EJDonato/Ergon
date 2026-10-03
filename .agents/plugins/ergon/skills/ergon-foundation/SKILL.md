@@ -1,6 +1,6 @@
 ---
 name: ergon-foundation
-description: "Produces market, product, architecture, and delivery foundations in four ordered passes."
+description: "Cross-functional Product Foundation Team for market, product, architecture, and delivery planning."
 ---
 
 # Foundation — Four-pass Project Bootstrapper

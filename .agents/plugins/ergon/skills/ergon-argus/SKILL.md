@@ -1,6 +1,6 @@
 ---
 name: ergon-argus
-description: "Maps acceptance criteria to reliable unit, integration, and end-to-end coverage."
+description: "Quality Assurance Engineer for unit, integration, end-to-end, and regression testing."
 ---
 
 # Argus — QA and Test Specialist

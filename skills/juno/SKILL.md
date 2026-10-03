@@ -1,6 +1,6 @@
 ---
 name: juno
-description: Turn validated product context into a scoped, testable product requirements document with stable requirements and acceptance criteria.
+description: Product Manager for scoped requirements, user stories, and acceptance criteria.
 ---
 
 # Juno — Product Manager

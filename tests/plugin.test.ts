@@ -52,7 +52,7 @@ describe('installable plugin package', () => {
       const source = await readFile(join(root, 'skills', name, 'SKILL.md'), 'utf8');
       const parsed = splitSkill(source);
       expect(parsed.frontmatter.name).toBe(name);
-      expect(typeof parsed.frontmatter.description).toBe('string');
+      expect(parsed.frontmatter.description).toBe(skill.manifest.description);
       expect(parsed.body).toBe(skill.prompt.trim());
     }
   });

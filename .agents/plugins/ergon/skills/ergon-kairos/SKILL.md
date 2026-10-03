@@ -1,6 +1,6 @@
 ---
 name: ergon-kairos
-description: "Turns the approved design into dependency-aware, verifiable implementation tasks."
+description: "Technical Delivery Lead for dependency-aware implementation planning and verification."
 ---
 
 # Kairos — Tech Lead and Planner

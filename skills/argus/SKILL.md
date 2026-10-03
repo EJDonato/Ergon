@@ -1,6 +1,6 @@
 ---
 name: argus
-description: Map requirements to deterministic unit, integration, and end-to-end coverage and diagnose defects or gaps across critical journeys.
+description: Quality Assurance Engineer for unit, integration, end-to-end, and regression testing.
 ---
 
 # Argus — QA and Test Specialist

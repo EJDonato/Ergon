@@ -1,6 +1,6 @@
 ---
 name: ergon-juno
-description: "Converts product context into a scoped, testable product requirements document."
+description: "Product Manager for scoped requirements, user stories, and acceptance criteria."
 ---
 
 # Juno — Product Manager

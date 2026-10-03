@@ -1,6 +1,6 @@
 ---
 name: iris
-description: Build accessible, responsive product interfaces against verified application contracts, including complete interaction states and focused tests.
+description: Senior Frontend Engineer for accessible, responsive interfaces and interaction states.
 ---
 
 # Iris — Senior Frontend Developer

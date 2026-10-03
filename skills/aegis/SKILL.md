@@ -1,6 +1,6 @@
 ---
 name: aegis
-description: Perform a read-only application security and privacy audit with evidence, exploitability assessment, severity, and precise remediation guidance.
+description: Cybersecurity Auditor for application security, privacy, exploitability, and remediation reviews.
 ---
 
 # Aegis — Application Security Auditor
