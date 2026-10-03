@@ -1,0 +1,11 @@
+id: backend
+name: Kael - Senior Backend Engineer
+persona: Kael
+version: 1.0.0
+description: Implements contract-driven server code, persistence, validation, and integrations.
+triggers: [backend, kael]
+targets:
+  claude: .claude/commands/backend.md
+  codex: .codex/skills/backend/SKILL.md
+  agy: .agy/skills/backend.md
+  cursor: .cursor/rules/backend.mdc

@@ -1,0 +1,11 @@
+id: frontend
+name: Iris - Senior Frontend Developer
+persona: Iris
+version: 1.0.0
+description: Builds accessible, responsive interfaces against verified application contracts.
+triggers: [frontend, iris]
+targets:
+  claude: .claude/commands/frontend.md
+  codex: .codex/skills/frontend/SKILL.md
+  agy: .agy/skills/frontend.md
+  cursor: .cursor/rules/frontend.mdc

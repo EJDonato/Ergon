@@ -1,0 +1,12 @@
+id: foundation
+name: Foundation - Four-pass Project Bootstrapper
+persona: Cyra, Juno, Orion, and Kairos
+version: 1.0.0
+description: Produces market, product, architecture, and delivery foundations in four ordered passes.
+triggers: [foundation, bootstrap]
+bundle: [market, prd, arch, plan]
+targets:
+  claude: .claude/commands/foundation.md
+  codex: .codex/skills/foundation/SKILL.md
+  agy: .agy/skills/foundation.md
+  cursor: .cursor/rules/foundation.mdc

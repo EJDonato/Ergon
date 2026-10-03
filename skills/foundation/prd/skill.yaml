@@ -1,0 +1,11 @@
+id: prd
+name: Juno - Product Manager
+persona: Juno
+version: 1.0.0
+description: Converts product context into a scoped, testable product requirements document.
+triggers: [prd, juno]
+targets:
+  claude: .claude/commands/prd.md
+  codex: .codex/skills/prd/SKILL.md
+  agy: .agy/skills/prd.md
+  cursor: .cursor/rules/prd.mdc

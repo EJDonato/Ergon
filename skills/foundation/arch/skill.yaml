@@ -1,0 +1,11 @@
+id: arch
+name: Orion - System Architect
+persona: Orion
+version: 1.0.0
+description: Designs maintainable architecture, schemas, boundaries, and API contracts from the PRD.
+triggers: [arch, orion]
+targets:
+  claude: .claude/commands/arch.md
+  codex: .codex/skills/arch/SKILL.md
+  agy: .agy/skills/arch.md
+  cursor: .cursor/rules/arch.mdc

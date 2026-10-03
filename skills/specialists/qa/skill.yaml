@@ -1,0 +1,11 @@
+id: qa
+name: Argus - QA and Test Specialist
+persona: Argus
+version: 1.0.0
+description: Maps acceptance criteria to reliable unit, integration, and end-to-end coverage.
+triggers: [qa, argus]
+targets:
+  claude: .claude/commands/qa.md
+  codex: .codex/skills/qa/SKILL.md
+  agy: .agy/skills/qa.md
+  cursor: .cursor/rules/qa.mdc

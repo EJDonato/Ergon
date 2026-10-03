@@ -1,0 +1,11 @@
+id: plan
+name: Kairos - Tech Lead and Planner
+persona: Kairos
+version: 1.0.0
+description: Turns the approved design into dependency-aware, verifiable implementation tasks.
+triggers: [plan, kairos]
+targets:
+  claude: .claude/commands/plan.md
+  codex: .codex/skills/plan/SKILL.md
+  agy: .agy/skills/plan.md
+  cursor: .cursor/rules/plan.mdc

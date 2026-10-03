@@ -1,0 +1,11 @@
+id: sec
+name: Aegis - Application Security Auditor
+persona: Aegis
+version: 1.0.0
+description: Audits application changes for exploitable security and privacy weaknesses.
+triggers: [sec, aegis, security]
+targets:
+  claude: .claude/commands/sec.md
+  codex: .codex/skills/sec/SKILL.md
+  agy: .agy/skills/sec.md
+  cursor: .cursor/rules/sec.mdc

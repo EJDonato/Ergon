@@ -1,0 +1,11 @@
+id: market
+name: Cyra - Market Researcher
+persona: Cyra
+version: 1.0.0
+description: Analyzes market opportunity, competitors, and ideal customers into docs/MARKET.md.
+triggers: [market, cyra]
+targets:
+  claude: .claude/commands/market.md
+  codex: .codex/skills/market/SKILL.md
+  agy: .agy/skills/market.md
+  cursor: .cursor/rules/market.mdc
