@@ -1,0 +1,26 @@
+{
+  "name": "ergon",
+  "version": "1.0.0",
+  "description": "A coordinated product and engineering team for taking software from market research through secure implementation.",
+  "author": { "name": "EJDonato", "url": "https://github.com/EJDonato" },
+  "homepage": "https://github.com/EJDonato/Ergon#readme",
+  "repository": "https://github.com/EJDonato/Ergon",
+  "license": "MIT",
+  "keywords": ["software-development", "product-planning", "architecture", "quality-assurance", "security"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Ergon",
+    "shortDescription": "A nine-skill product and engineering team",
+    "longDescription": "Plan, design, implement, test, and audit software with focused market, product, architecture, delivery, backend, frontend, QA, and security workflows.",
+    "developerName": "EJDonato",
+    "category": "Developer Tools",
+    "capabilities": ["Read", "Write"],
+    "websiteURL": "https://github.com/EJDonato/Ergon",
+    "defaultPrompt": [
+      "Use Ergon to create the product foundation for this repository.",
+      "Use Ergon to plan and implement this feature.",
+      "Use Ergon to review the quality and security of these changes."
+    ],
+    "brandColor": "#6D5EF5"
+  }
+}

@@ -21,4 +21,12 @@ describe('installSkills', () => {
     await expect(access(join(root, '.codex/skills/sec/SKILL.md'))).resolves.toBeUndefined();
     await expect(access(join(root, '.cursor/rules/foundation.mdc'))).resolves.toBeUndefined();
   });
+
+  it('installs AGY skills in the Antigravity slash-command layout', async () => {
+    const root = await mkdtemp(join(tmpdir(), 'ergon-install-'));
+    await installSkills({ root, target: 'backend', runners: ['agy'] });
+    const content = await readFile(join(root, '.agents/skills/ergon-kael/SKILL.md'), 'utf8');
+    expect(content).toMatch(/^---\nname: ergon-kael\ndescription:/);
+    expect(content).not.toContain('{{arguments}}');
+  });
 });

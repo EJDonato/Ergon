@@ -12,7 +12,7 @@
 
 Modern coding agents (Claude Code, Codex, Antigravity) support custom workflows, slash commands, and persona rules, but configuration is fragmented and manual:
 * Setting up multi-file personas (Product Manager, Backend Architect, QA Automation, AppSec) requires copying and pasting prompt markdown across every new project.
-* Different agent runners expect files in different directories (`.claude/commands/`, `.codex/skills/`, `.cursor/rules/`, or project root instructions).
+* Different agent runners expect files in different directories (`.claude/commands/`, `.codex/skills/`, `.agents/skills/`, `.cursor/rules/`, or project root instructions).
 * There is no single package manager or central registry to install, update, or share curated, battle-tested agent workflows.
 
 ---
@@ -79,6 +79,7 @@ triggers:
 targets:
   claude: ".claude/commands/market.md"
   codex: ".codex/skills/market/SKILL.md"
+  agy: ".agents/skills/ergon-cyra/SKILL.md"
   cursor: ".cursor/rules/market.mdc"
 ```
 
@@ -125,7 +126,7 @@ The installer auto-detects existing repo configurations and transforms the templ
 | :--- | :--- | :--- |
 | **Claude Code** | `.claude/commands/<name>.md` | Frontmatter `description`, `$ARGUMENTS` interpolation |
 | **Codex CLI** | `.codex/skills/<name>/SKILL.md` | OpenAI Codex skill layout & schema parameters |
-| **Antigravity (`agy`)** | `.agy/skills/<name>.md` | Antigravity execution block format |
+| **Antigravity (`agy`)** | `.agents/skills/ergon-<persona>/SKILL.md` | Persona-namespaced Agent Skill exposed as `/ergon-<persona>` |
 | **Cursor / Windsurf** | `.cursor/rules/<name>.mdc` | Markdown with rule application triggers |
 
 ---

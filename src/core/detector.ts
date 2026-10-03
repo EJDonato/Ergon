@@ -5,7 +5,7 @@ import { RUNNERS, type Runner } from '../types/index.js';
 const MARKERS: Record<Runner, string[]> = {
   claude: ['.claude', 'CLAUDE.md'],
   codex: ['.codex'],
-  agy: ['.agy', 'antigravity.yaml'],
+  agy: ['.agents/skills', '.agents/workflows', 'antigravity.yaml'],
   cursor: ['.cursor', '.cursorrules'],
 };
 

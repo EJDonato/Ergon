@@ -14,7 +14,14 @@ describe('detectRunners', () => {
     const root = await mkdtemp(join(tmpdir(), 'ergon-detector-'));
     await mkdir(join(root, '.codex'));
     await mkdir(join(root, '.cursor'));
+    await mkdir(join(root, '.agents/skills'), { recursive: true });
     await writeFile(join(root, 'CLAUDE.md'), '');
-    await expect(detectRunners(root)).resolves.toEqual(['claude', 'codex', 'cursor']);
+    await expect(detectRunners(root)).resolves.toEqual(['claude', 'codex', 'agy', 'cursor']);
+  });
+
+  it('does not mistake a Codex plugin marketplace for Antigravity configuration', async () => {
+    const root = await mkdtemp(join(tmpdir(), 'ergon-detector-'));
+    await mkdir(join(root, '.agents/plugins'), { recursive: true });
+    await expect(detectRunners(root)).resolves.toEqual([]);
   });
 });

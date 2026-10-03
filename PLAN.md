@@ -63,7 +63,7 @@ flowchart LR
   - *Acceptance Criteria:* Invalid manifests throw structured errors; valid manifests return strongly typed objects.
 
 - [ ] **Task 2.2: Workspace Runner Detector**
-  - Implement `src/core/detector.ts` to detect `.claude`, `.codex`, `.agy`, and `.cursor` in target root.
+  - Implement `src/core/detector.ts` to detect `.claude`, `.codex`, Antigravity `.agents/skills` or `.agents/workflows`, and `.cursor` in the target root.
   - Write unit tests in `tests/detector.test.ts` covering single, multiple, and empty runner directories.
   - *Acceptance Criteria:* Accurately identifies all present runners in a workspace.
 
@@ -71,7 +71,7 @@ flowchart LR
   - Implement `src/adapters/base.ts` (abstract `RunnerAdapter` interface: `transform(manifest, prompt): AdapterOutput`).
   - Implement `src/adapters/claude.ts` (inverts prompt into `.claude/commands/<id>.md` with frontmatter and `$ARGUMENTS`).
   - Implement `src/adapters/codex.ts` (outputs `.codex/skills/<id>/SKILL.md`).
-  - Implement `src/adapters/agy.ts` (outputs `.agy/skills/<id>.md`).
+  - Implement `src/adapters/agy.ts` (outputs `.agents/skills/ergon-<persona>/SKILL.md`).
   - Implement `src/adapters/cursor.ts` (outputs `.cursor/rules/<id>.mdc`).
   - Write unit tests in `tests/adapters.test.ts` verifying exact string outputs for all 4 targets.
   - *Acceptance Criteria:* Every adapter produces syntactically valid files matching target runner specifications.

@@ -7,5 +7,5 @@ triggers: [qa, argus]
 targets:
   claude: .claude/commands/qa.md
   codex: .codex/skills/qa/SKILL.md
-  agy: .agy/skills/qa.md
+  agy: .agents/skills/ergon-argus/SKILL.md
   cursor: .cursor/rules/qa.mdc

@@ -1,0 +1,12 @@
+{
+  "name": "ergon-marketplace",
+  "interface": { "displayName": "Ergon" },
+  "plugins": [
+    {
+      "name": "ergon",
+      "source": { "source": "url", "url": "https://github.com/EJDonato/Ergon.git" },
+      "policy": { "installation": "AVAILABLE", "authentication": "ON_INSTALL" },
+      "category": "Developer Tools"
+    }
+  ]
+}

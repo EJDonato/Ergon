@@ -42,7 +42,7 @@ flowchart TD
     subgraph Targets [Host Project File Targets]
         ClaudeTarget[".claude/commands/<name>.md"]
         CodexTarget[".codex/skills/<name>/SKILL.md"]
-        AgyTarget[".agy/skills/<name>.md"]
+        AgyTarget[".agents/skills/ergon-<persona>/SKILL.md"]
         CursorTarget[".cursor/rules/<name>.mdc"]
     end
     
@@ -92,7 +92,7 @@ ergon/
 │   │   ├── base.ts            # Base runner adapter interface
 │   │   ├── claude.ts          # Claude Code adapter (.claude/commands/)
 │   │   ├── codex.ts           # Codex CLI adapter (.codex/skills/)
-│   │   ├── agy.ts             # Antigravity adapter (.agy/skills/)
+│   │   ├── agy.ts             # Antigravity adapter (.agents/skills/)
 │   │   └── cursor.ts          # Cursor / Windsurf adapter (.cursor/rules/)
 │   └── types/
 │       └── index.ts           # Shared TypeScript interfaces & types
@@ -145,7 +145,7 @@ The detector inspects the current working directory to identify configured agent
 | :--- | :--- | :--- |
 | `claude` | `.claude/` exists, or `CLAUDE.md` in root | `.claude/commands/<id>.md` |
 | `codex` | `.codex/` exists | `.codex/skills/<id>/SKILL.md` |
-| `agy` | `.agy/` exists, or `antigravity.yaml` | `.agy/skills/<id>.md` |
+| `agy` | `.agents/skills/`, `.agents/workflows/`, or `antigravity.yaml` exists | `.agents/skills/ergon-<persona>/SKILL.md` |
 | `cursor` | `.cursor/` or `.cursorrules` exists | `.cursor/rules/<id>.mdc` |
 
 * **Fallback Behavior:** If no runner marker is detected during `ergon init`, the CLI presents an interactive multi-select menu via `@clack/prompts` to let the developer choose target runners.
@@ -195,8 +195,8 @@ The transformation engine accepts canonical `SkillManifest` + `prompt.md` and yi
 * Creates dedicated skill directory `.codex/skills/<id>/`.
 * Injects YAML header formatted for Codex skill execution and schema parameter bindings.
 
-#### 3. Antigravity Adapter (`.agy/skills/<id>.md`)
-* Wraps markdown in Antigravity execution block format with declared capability scopes.
+#### 3. Antigravity Adapter (`.agents/skills/ergon-<persona>/SKILL.md`)
+* Emits a standard Agent Skill with `name` and `description` frontmatter so Antigravity can discover it semantically and expose it as `/ergon-<persona>`.
 
 #### 4. Cursor / Windsurf Adapter (`.cursor/rules/<id>.mdc`)
 * Injects MDC frontmatter:

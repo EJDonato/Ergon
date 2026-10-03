@@ -7,5 +7,5 @@ triggers: [prd, juno]
 targets:
   claude: .claude/commands/prd.md
   codex: .codex/skills/prd/SKILL.md
-  agy: .agy/skills/prd.md
+  agy: .agents/skills/ergon-juno/SKILL.md
   cursor: .cursor/rules/prd.mdc

@@ -1,8 +1,42 @@
 # Ergon
 
-Ergon installs a curated set of portable AI-agent skills into Claude Code, Codex CLI, Antigravity, Cursor, and Windsurf projects. The built-in registry works offline and every generated file is ordinary, editable Markdown.
+Ergon is an installable agent plugin and CLI containing a curated set of portable software-development skills. Install the whole team as a plugin in Codex or Claude Code, or use the CLI to copy individual skills into Codex, Claude Code, Antigravity, Cursor, and Windsurf projects. Everything is ordinary, editable Markdown and works without telemetry.
 
-## Quick start
+## Install as a plugin
+
+The GitHub repository is a marketplace, so agents can install Ergon straight from `EJDonato/Ergon`.
+
+### Codex
+
+```bash
+codex plugin marketplace add EJDonato/Ergon
+codex plugin add ergon@ergon-marketplace
+```
+
+Start a new Codex chat, then ask for a workflow naturally or invoke one of the installed skills, such as `$ergon:foundation`, `$ergon:backend`, or `$ergon:sec`.
+
+### Claude Code
+
+```bash
+claude plugin marketplace add EJDonato/Ergon
+claude plugin install ergon@ergon-marketplace
+```
+
+Start a new Claude Code session. Skills are available as `/ergon:foundation`, `/ergon:backend`, `/ergon:sec`, and the other names listed below.
+
+For local development, either host can load the checked-out repository directly through its local plugin workflow; Claude Code also supports `claude --plugin-dir .`.
+
+### Antigravity
+
+Install the Agent Skills into a project with the CLI:
+
+```bash
+npx ergon init --runner agy
+```
+
+Start a new Antigravity session. The skills use persona-based commands: `/ergon-cyra`, `/ergon-juno`, `/ergon-orion`, `/ergon-kairos`, `/ergon-kael`, `/ergon-iris`, `/ergon-argus`, `/ergon-aegis`, and `/ergon-foundation`.
+
+## Install with the CLI
 
 ```bash
 npx ergon init --runner codex
@@ -11,7 +45,7 @@ npx ergon add backend --runner cursor
 npx ergon list
 ```
 
-When `--runner` is omitted, Ergon detects existing `.claude`, `.codex`, `.agy`, and `.cursor` configuration. If no marker is found in an interactive terminal, it asks which runners to configure. In CI or another non-interactive shell, pass `--runner` explicitly.
+When `--runner` is omitted, Ergon detects existing `.claude`, `.codex`, Antigravity `.agents/skills` or `.agents/workflows`, and `.cursor` configuration. If no marker is found in an interactive terminal, it asks which runners to configure. In CI or another non-interactive shell, pass `--runner` explicitly.
 
 Existing files are preserved by default. Pass `--force` to replace generated skill files:
 
@@ -41,7 +75,7 @@ npx ergon add market --runner codex --force
 | --- | --- |
 | Claude Code | `.claude/commands/<skill>.md` |
 | Codex CLI | `.codex/skills/<skill>/SKILL.md` |
-| Antigravity | `.agy/skills/<skill>.md` |
+| Antigravity | `.agents/skills/ergon-<persona>/SKILL.md` |
 | Cursor / Windsurf | `.cursor/rules/<skill>.mdc` |
 
 ## Commands
@@ -54,6 +88,12 @@ ergon --help
 ```
 
 Supported runner IDs are `claude`, `codex`, `agy`, and `cursor`.
+
+## Plugin layout
+
+The repository root is a portable Agent Plugins package. `plugin.json` is the portable manifest, `.codex-plugin/plugin.json` and `.claude-plugin/plugin.json` provide host compatibility, and `skills/<name>/SKILL.md` contains the installable skills. The marketplace catalogs are committed under `.agents/plugins/` and `.claude-plugin/`.
+
+The nested `skills/foundation/*` and `skills/specialists/*` files remain the canonical registry consumed by the npm CLI. Tests keep the plugin skill bodies synchronized with those source prompts.
 
 ## Development
 

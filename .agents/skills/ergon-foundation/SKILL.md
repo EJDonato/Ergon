@@ -1,3 +1,8 @@
+---
+name: ergon-foundation
+description: "Produces market, product, architecture, and delivery foundations in four ordered passes."
+---
+
 # Foundation — Four-pass Project Bootstrapper
 
 Bootstrap the project through four explicit passes. Inspect all existing repository context first.

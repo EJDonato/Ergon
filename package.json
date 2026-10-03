@@ -7,8 +7,12 @@
     "ergon": "bin/ergon.js"
   },
   "files": [
+    ".agents",
+    ".claude-plugin",
+    ".codex-plugin",
     "bin",
     "dist",
+    "plugin.json",
     "skills",
     "README.md"
   ],

@@ -1,3 +1,8 @@
+---
+name: foundation
+description: Bootstrap a software project through four ordered market, product, architecture, and implementation-planning passes with traceable outputs.
+---
+
 # Foundation — Four-pass Project Bootstrapper
 
 Bootstrap the project through four explicit passes. Inspect all existing repository context first.

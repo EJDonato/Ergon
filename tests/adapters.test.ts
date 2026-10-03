@@ -24,10 +24,11 @@ describe('runner adapters', () => {
     expect(output.content).toMatch(/^---\nname: demo\n/);
   });
 
-  it('renders Antigravity metadata and argument binding', () => {
+  it('renders an Antigravity Agent Skill discoverable as a slash command', () => {
     const output = adapters.agy.transform(manifest, '# Prompt');
-    expect(output.path).toBe('.agy/skills/demo.md');
-    expect(output.content).toContain('{{arguments}}');
+    expect(output.path).toBe('.agents/skills/ergon-demo/SKILL.md');
+    expect(output.content).toMatch(/^---\nname: ergon-demo\ndescription: "Demonstrates adapter behavior\."\n---/);
+    expect(output.content).not.toContain('{{arguments}}');
   });
 
   it('renders Cursor MDC metadata', () => {

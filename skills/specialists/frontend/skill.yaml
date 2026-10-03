@@ -7,5 +7,5 @@ triggers: [frontend, iris]
 targets:
   claude: .claude/commands/frontend.md
   codex: .codex/skills/frontend/SKILL.md
-  agy: .agy/skills/frontend.md
+  agy: .agents/skills/ergon-iris/SKILL.md
   cursor: .cursor/rules/frontend.mdc
