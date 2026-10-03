@@ -1,5 +1,5 @@
 import { readdir, readFile } from 'node:fs/promises';
-import { join, resolve } from 'node:path';
+import { basename, dirname, join, resolve } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import YAML from 'yaml';
 import { adapters } from '../src/adapters/index.js';
@@ -65,10 +65,23 @@ describe('installable plugin package', () => {
     expect(claude.plugins[0]).toMatchObject({ name: 'ergon', source: '.' });
   });
 
-  it('ships workspace-native Antigravity slash commands', async () => {
+  it('ships a managed Antigravity plugin with persona slash commands', async () => {
+    const manifest = JSON.parse(
+      await readFile(join(root, '.agents/plugins/ergon/plugin.json'), 'utf8'),
+    );
+    expect(manifest).toEqual({
+      $schema: 'https://antigravity.google/schemas/v1/plugin.json',
+      name: 'ergon',
+      description: expect.any(String),
+    });
+
     for (const skill of await listSkills()) {
       const expected = adapters.agy.transform(skill.manifest, skill.prompt);
-      const source = await readFile(join(root, expected.path), 'utf8');
+      const command = basename(dirname(expected.path));
+      const source = await readFile(
+        join(root, '.agents/plugins/ergon/skills', command, 'SKILL.md'),
+        'utf8',
+      );
       expect(source).toBe(expected.content);
     }
   });

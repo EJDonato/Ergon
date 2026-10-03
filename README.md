@@ -1,6 +1,6 @@
 # Ergon
 
-Ergon is an installable agent plugin and CLI containing a curated set of portable software-development skills. Install the whole team as a plugin in Codex or Claude Code, or use the CLI to copy individual skills into Codex, Claude Code, Antigravity, Cursor, and Windsurf projects. Everything is ordinary, editable Markdown and works without telemetry.
+Ergon is an installable agent plugin and CLI containing a curated set of portable software-development skills. Install the whole team as a managed plugin in Codex, Claude Code, or Antigravity, or use the CLI when you intentionally want project-local files for Cursor, Windsurf, and other runners. Everything works without telemetry.
 
 ## Install as a plugin
 
@@ -28,13 +28,17 @@ For local development, either host can load the checked-out repository directly 
 
 ### Antigravity
 
-Install the Agent Skills into a project with the CLI:
+Ergon includes a native Antigravity plugin bundle at `.agents/plugins/ergon`. After downloading or cloning this repository, install that bundle globally:
 
 ```bash
-npx --yes --package github:EJDonato/Ergon ergon init --runner agy
+agy plugin install /absolute/path/to/Ergon/.agents/plugins/ergon
 ```
 
-Start a new Antigravity session. The skills use persona-based commands: `/ergon-cyra`, `/ergon-juno`, `/ergon-orion`, `/ergon-kairos`, `/ergon-kael`, `/ergon-iris`, `/ergon-argus`, `/ergon-aegis`, and `/ergon-foundation`.
+In Antigravity, you can instead open `/plugin`, choose **Install from local directory**, and select the same folder. The plugin manager stages and manages the bundle globally rather than generating skills in the current project.
+
+Start a new Antigravity session. The plugin provides `/ergon-cyra`, `/ergon-juno`, `/ergon-orion`, `/ergon-kairos`, `/ergon-kael`, `/ergon-iris`, `/ergon-argus`, `/ergon-aegis`, and `/ergon-foundation`.
+
+Direct installation from Antigravity's Discover marketplace requires the plugin to be accepted into Google's curated marketplace. The repository bundle is ready for that submission; until it is listed, use **Install from local directory**.
 
 ## Install with the CLI
 
@@ -77,7 +81,7 @@ npx --yes --package github:EJDonato/Ergon ergon add market --runner codex --forc
 | --- | --- |
 | Claude Code | `.claude/commands/<skill>.md` |
 | Codex CLI | `.codex/skills/<skill>/SKILL.md` |
-| Antigravity | `.agents/skills/ergon-<persona>/SKILL.md` |
+| Antigravity | Managed `ergon` plugin with `skills/ergon-<persona>/SKILL.md` |
 | Cursor / Windsurf | `.cursor/rules/<skill>.mdc` |
 
 ## Commands
@@ -93,7 +97,7 @@ Supported runner IDs are `claude`, `codex`, `agy`, and `cursor`.
 
 ## Plugin layout
 
-The repository root is a portable Agent Plugins package. `plugin.json` is the portable manifest, `.codex-plugin/plugin.json` and `.claude-plugin/plugin.json` provide host compatibility, and `skills/<name>/SKILL.md` contains the installable skills. The marketplace catalogs are committed under `.agents/plugins/` and `.claude-plugin/`.
+The repository root is a portable Agent Plugins package. `plugin.json` is the portable manifest, `.codex-plugin/plugin.json` and `.claude-plugin/plugin.json` provide host compatibility, and `skills/<name>/SKILL.md` contains the portable skills. The Codex and Claude marketplace catalogs are committed under `.agents/plugins/` and `.claude-plugin/`. Antigravity's strict native bundle lives at `.agents/plugins/ergon/` with its own manifest and persona-named skills.
 
 The nested `skills/foundation/*` and `skills/specialists/*` files remain the canonical registry consumed by the npm CLI. Tests keep the plugin skill bodies synchronized with those source prompts.
 
