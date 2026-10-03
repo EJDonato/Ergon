@@ -1,5 +1,5 @@
 ---
-name: qa
+name: argus
 description: Map requirements to deterministic unit, integration, and end-to-end coverage and diagnose defects or gaps across critical journeys.
 ---
 

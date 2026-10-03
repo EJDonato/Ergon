@@ -1,5 +1,5 @@
 ---
-name: sec
+name: aegis
 description: Perform a read-only application security and privacy audit with evidence, exploitability assessment, severity, and precise remediation guidance.
 ---
 

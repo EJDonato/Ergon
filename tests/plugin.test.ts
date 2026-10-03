@@ -24,7 +24,7 @@ describe('installable plugin package', () => {
 
     expect(portable.$schema).toBe('https://agent-plugins.org/schemas/1.0.0/plugin.schema.json');
     expect([portable.name, codex.name, claude.name]).toEqual(['ergon', 'ergon', 'ergon']);
-    expect([portable.version, codex.version, claude.version]).toEqual(['1.0.0', '1.0.0', '1.0.0']);
+    expect([portable.version, codex.version, claude.version]).toEqual(['1.1.0', '1.1.0', '1.1.0']);
     expect(codex.skills).toBe('./skills/');
   });
 
@@ -37,18 +37,21 @@ describe('installable plugin package', () => {
 
   it('publishes the same nine canonical workflows as plugin skills', async () => {
     const canonical = await listSkills();
+    const pluginName = (skill: (typeof canonical)[number]) =>
+      skill.manifest.id === 'foundation' ? 'foundation' : skill.manifest.persona.toLowerCase();
     const pluginDirectories = (await readdir(join(root, 'skills'), { withFileTypes: true }))
       .filter((entry) => entry.isDirectory())
       .map((entry) => entry.name)
       .filter((name) => name !== 'specialists')
       .sort();
 
-    expect(pluginDirectories).toEqual(canonical.map((skill) => skill.manifest.id).sort());
+    expect(pluginDirectories).toEqual(canonical.map(pluginName).sort());
 
     for (const skill of canonical) {
-      const source = await readFile(join(root, 'skills', skill.manifest.id, 'SKILL.md'), 'utf8');
+      const name = pluginName(skill);
+      const source = await readFile(join(root, 'skills', name, 'SKILL.md'), 'utf8');
       const parsed = splitSkill(source);
-      expect(parsed.frontmatter.name).toBe(skill.manifest.id);
+      expect(parsed.frontmatter.name).toBe(name);
       expect(typeof parsed.frontmatter.description).toBe('string');
       expect(parsed.body).toBe(skill.prompt.trim());
     }

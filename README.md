@@ -13,7 +13,7 @@ codex plugin marketplace add EJDonato/Ergon
 codex plugin add ergon@ergon-marketplace
 ```
 
-Start a new Codex chat, then ask for a workflow naturally or invoke one of the installed skills, such as `$ergon:foundation`, `$ergon:backend`, or `$ergon:sec`.
+Start a new Codex chat, then ask for a workflow naturally or invoke a persona skill such as `$ergon:cyra`, `$ergon:kael`, or `$ergon:aegis`. Codex enforces `plugin:skill` identities and uses `$` for explicit skill invocation, so `$ergon:cyra` is its platform-native equivalent of Antigravity's `/ergon-cyra`.
 
 ### Claude Code
 
@@ -22,7 +22,7 @@ claude plugin marketplace add EJDonato/Ergon
 claude plugin install ergon@ergon-marketplace
 ```
 
-Start a new Claude Code session. Skills are available as `/ergon:foundation`, `/ergon:backend`, `/ergon:sec`, and the other names listed below.
+Start a new Claude Code session. Skills are available as `/ergon:cyra`, `/ergon:kael`, `/ergon:aegis`, and the other persona names listed below.
 
 For local development, either host can load the checked-out repository directly through its local plugin workflow; Claude Code also supports `claude --plugin-dir .`.
 
@@ -61,17 +61,17 @@ npx --yes --package github:EJDonato/Ergon ergon add market --runner codex --forc
 
 ## Included skills
 
-| Skill | Persona | Purpose |
-| --- | --- | --- |
-| `market` | Cyra | Market, audience, competitors, and positioning |
-| `prd` | Juno | Scoped product requirements and acceptance criteria |
-| `arch` | Orion | Architecture, schemas, contracts, and tradeoffs |
-| `plan` | Kairos | Dependency-aware implementation tasks |
-| `foundation` | Cyra → Juno → Orion → Kairos | Complete four-pass project foundation |
-| `backend` | Kael | Server, persistence, validation, and integrations |
-| `frontend` | Iris | Responsive and accessible product interfaces |
-| `qa` | Argus | Unit, integration, and end-to-end quality coverage |
-| `sec` | Aegis | Read-only application security audits |
+| CLI skill | Persona | Managed plugin identity | Purpose |
+| --- | --- | --- | --- |
+| `market` | Cyra | `ergon:cyra` | Market, audience, competitors, and positioning |
+| `prd` | Juno | `ergon:juno` | Scoped product requirements and acceptance criteria |
+| `arch` | Orion | `ergon:orion` | Architecture, schemas, contracts, and tradeoffs |
+| `plan` | Kairos | `ergon:kairos` | Dependency-aware implementation tasks |
+| `foundation` | Cyra → Juno → Orion → Kairos | `ergon:foundation` | Complete four-pass project foundation |
+| `backend` | Kael | `ergon:kael` | Server, persistence, validation, and integrations |
+| `frontend` | Iris | `ergon:iris` | Responsive and accessible product interfaces |
+| `qa` | Argus | `ergon:argus` | Unit, integration, and end-to-end quality coverage |
+| `sec` | Aegis | `ergon:aegis` | Read-only application security audits |
 
 `ergon add foundation` installs the four individual foundation personas and the composite pipeline. `ergon add specialists` installs all four implementation specialists. `ergon init` installs all nine skills.
 
@@ -97,7 +97,7 @@ Supported runner IDs are `claude`, `codex`, `agy`, and `cursor`.
 
 ## Plugin layout
 
-The repository root is a portable Agent Plugins package. `plugin.json` is the portable manifest, `.codex-plugin/plugin.json` and `.claude-plugin/plugin.json` provide host compatibility, and `skills/<name>/SKILL.md` contains the portable skills. The Codex and Claude marketplace catalogs are committed under `.agents/plugins/` and `.claude-plugin/`. Antigravity's strict native bundle lives at `.agents/plugins/ergon/` with its own manifest and persona-named skills.
+The repository root is a portable Agent Plugins package. `plugin.json` is the portable manifest, `.codex-plugin/plugin.json` and `.claude-plugin/plugin.json` provide host compatibility, and `skills/<persona>/SKILL.md` contains the portable skills. The Codex and Claude marketplace catalogs are committed under `.agents/plugins/` and `.claude-plugin/`. Antigravity's strict native bundle lives at `.agents/plugins/ergon/` with its own manifest and hyphenated persona skill names.
 
 The nested `skills/foundation/*` and `skills/specialists/*` files remain the canonical registry consumed by the npm CLI. Tests keep the plugin skill bodies synchronized with those source prompts.
 

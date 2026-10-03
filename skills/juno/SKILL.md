@@ -1,5 +1,5 @@
 ---
-name: prd
+name: juno
 description: Turn validated product context into a scoped, testable product requirements document with stable requirements and acceptance criteria.
 ---
 

@@ -1,5 +1,5 @@
 ---
-name: frontend
+name: iris
 description: Build accessible, responsive product interfaces against verified application contracts, including complete interaction states and focused tests.
 ---
 

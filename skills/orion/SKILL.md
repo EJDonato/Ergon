@@ -1,5 +1,5 @@
 ---
-name: arch
+name: orion
 description: Design maintainable software architecture, schemas, boundaries, API contracts, security controls, and operational strategy from product requirements.
 ---
 

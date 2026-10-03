@@ -1,5 +1,5 @@
 ---
-name: plan
+name: kairos
 description: Convert approved requirements and architecture into dependency-aware, atomic implementation tasks with concrete verification.
 ---
 

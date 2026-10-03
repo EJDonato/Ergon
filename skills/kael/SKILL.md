@@ -1,5 +1,5 @@
 ---
-name: backend
+name: kael
 description: Implement contract-driven backend code, persistence, validation, authorization, and integrations when server-side work is requested.
 ---
 
