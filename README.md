@@ -31,7 +31,7 @@ For local development, either host can load the checked-out repository directly 
 Install the Agent Skills into a project with the CLI:
 
 ```bash
-npx ergon init --runner agy
+npx --yes --package github:EJDonato/Ergon ergon init --runner agy
 ```
 
 Start a new Antigravity session. The skills use persona-based commands: `/ergon-cyra`, `/ergon-juno`, `/ergon-orion`, `/ergon-kairos`, `/ergon-kael`, `/ergon-iris`, `/ergon-argus`, `/ergon-aegis`, and `/ergon-foundation`.
@@ -39,18 +39,20 @@ Start a new Antigravity session. The skills use persona-based commands: `/ergon-
 ## Install with the CLI
 
 ```bash
-npx ergon init --runner codex
-npx ergon add foundation --runner claude
-npx ergon add backend --runner cursor
-npx ergon list
+npx --yes --package github:EJDonato/Ergon ergon init --runner codex
+npx --yes --package github:EJDonato/Ergon ergon add foundation --runner claude
+npx --yes --package github:EJDonato/Ergon ergon add backend --runner cursor
+npx --yes --package github:EJDonato/Ergon ergon list
 ```
+
+The unscoped npm name `ergon` belongs to an unrelated package. The explicit GitHub package source above guarantees that `npx` runs this repository from any project directory.
 
 When `--runner` is omitted, Ergon detects existing `.claude`, `.codex`, Antigravity `.agents/skills` or `.agents/workflows`, and `.cursor` configuration. If no marker is found in an interactive terminal, it asks which runners to configure. In CI or another non-interactive shell, pass `--runner` explicitly.
 
 Existing files are preserved by default. Pass `--force` to replace generated skill files:
 
 ```bash
-npx ergon add market --runner codex --force
+npx --yes --package github:EJDonato/Ergon ergon add market --runner codex --force
 ```
 
 ## Included skills
@@ -97,7 +99,7 @@ The nested `skills/foundation/*` and `skills/specialists/*` files remain the can
 
 ## Development
 
-The published CLI supports Node.js 18 or later. Developing and running the current test toolchain requires Node.js 20 or later.
+The CLI supports Node.js 18 or later. Developing and running the current test toolchain requires Node.js 20 or later.
 
 ```bash
 npm install

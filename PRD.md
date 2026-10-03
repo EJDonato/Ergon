@@ -2,7 +2,7 @@
 
 **Identity:** Universal Skill & Persona Registry for Autonomous Coding Agents  
 **Target Runners:** Claude Code, Antigravity (`agy`), Codex CLI, Cursor/Windsurf  
-**Form Factor:** CLI package (`npx ergon`) + Git-backed skill repository  
+**Form Factor:** GitHub-hosted CLI package + installable plugin repository  
 **Status:** Implementation Ready  
 **Version:** 1.0.0  
 
@@ -87,35 +87,35 @@ targets:
 
 ### 3.2 The CLI Tool (`ergon`)
 
-Distributed via npm (`npm install -g ergon` or on-demand via `npx ergon`).
+Distributed directly from GitHub with `npx --package github:EJDonato/Ergon ergon`; the unscoped npm package name `ergon` belongs to an unrelated project.
 
 #### Command Set
 
 ```bash
 # Auto-detects runner config and installs the default development bundle
-npx ergon init
+npx --package github:EJDonato/Ergon ergon init
 
 # Install foundation skills (full pipeline or individual personas)
-npx ergon add foundation       # Full pipeline + all 4 personas
-npx ergon add market           # Cyra (Market Researcher)
-npx ergon add prd              # Juno (Product Manager)
-npx ergon add arch             # Orion (System Architect)
-npx ergon add plan             # Kairos (Tech Lead & Planner)
+npx --package github:EJDonato/Ergon ergon add foundation  # Full pipeline + all 4 personas
+npx --package github:EJDonato/Ergon ergon add market      # Cyra (Market Researcher)
+npx --package github:EJDonato/Ergon ergon add prd         # Juno (Product Manager)
+npx --package github:EJDonato/Ergon ergon add arch        # Orion (System Architect)
+npx --package github:EJDonato/Ergon ergon add plan        # Kairos (Tech Lead & Planner)
 
 # Install specialist personas (bundle or individual)
-npx ergon add specialists      # All 4 specialists
-npx ergon add backend          # Kael (Backend)
-npx ergon add frontend         # Iris (Frontend)
-npx ergon add qa               # Argus (QA Automation)
-npx ergon add sec              # Aegis (Application Security)
+npx --package github:EJDonato/Ergon ergon add specialists # All 4 specialists
+npx --package github:EJDonato/Ergon ergon add backend     # Kael (Backend)
+npx --package github:EJDonato/Ergon ergon add frontend    # Iris (Frontend)
+npx --package github:EJDonato/Ergon ergon add qa          # Argus (QA Automation)
+npx --package github:EJDonato/Ergon ergon add sec         # Aegis (Application Security)
 
 # List available skills in the remote registry
-npx ergon list
+npx --package github:EJDonato/Ergon ergon list
 
 # Target a specific runner explicitly
-npx ergon add market --runner claude
-npx ergon add backend --runner codex
-npx ergon add foundation --runner agy
+npx --package github:EJDonato/Ergon ergon add market --runner claude
+npx --package github:EJDonato/Ergon ergon add backend --runner codex
+npx --package github:EJDonato/Ergon ergon add foundation --runner agy
 ```
 
 #### Adapter & Path Matrix
@@ -208,4 +208,4 @@ All personas are designed with distinct specializations, triggers, and artifact 
 * **Milestone 1:** Create GitHub repository layout hosting the baseline templates (`foundation`, `backend`, `frontend`, `qa`, `sec`).
 * **Milestone 2:** Implement the TypeScript CLI package (`ergon init` and `ergon add`) supporting Claude Code and Codex target directories.
 * **Milestone 3:** Add Antigravity (`agy`) and Cursor/Windsurf adapter formats.
-* **Milestone 4:** Add community repository support (`npx ergon add user/repo:skill-name`).
+* **Milestone 4:** Add community repository support (`ergon add user/repo:skill-name`).

@@ -24,7 +24,7 @@ Ergon is a lightweight, zero-dependency-runtime CLI package and curated registry
 
 ```mermaid
 flowchart TD
-    User([Developer / CI]) -->|npx ergon add / init| CLI[Ergon CLI]
+    User([Developer / CI]) -->|GitHub npx package: ergon add / init| CLI[Ergon CLI]
     
     subgraph CLI Core
         Detect[Runner Detection Engine]

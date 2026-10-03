@@ -2,6 +2,14 @@
   "name": "ergon",
   "version": "1.0.0",
   "description": "Universal skill and persona registry for autonomous coding agents",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EJDonato/Ergon.git"
+  },
+  "homepage": "https://github.com/EJDonato/Ergon#readme",
+  "bugs": {
+    "url": "https://github.com/EJDonato/Ergon/issues"
+  },
   "type": "module",
   "bin": {
     "ergon": "bin/ergon.js"
@@ -18,6 +26,7 @@
   ],
   "scripts": {
     "build": "tsup",
+    "prepare": "npm run build",
     "test": "npm run build && vitest run",
     "test:watch": "vitest",
     "typecheck": "tsc --noEmit",

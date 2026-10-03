@@ -28,6 +28,13 @@ describe('installable plugin package', () => {
     expect(codex.skills).toBe('./skills/');
   });
 
+  it('can build its CLI when installed directly from GitHub', async () => {
+    const packageJson = JSON.parse(await readFile(join(root, 'package.json'), 'utf8'));
+    expect(packageJson.bin).toEqual({ ergon: 'bin/ergon.js' });
+    expect(packageJson.scripts.prepare).toBe('npm run build');
+    expect(packageJson.repository.url).toBe('git+https://github.com/EJDonato/Ergon.git');
+  });
+
   it('publishes the same nine canonical workflows as plugin skills', async () => {
     const canonical = await listSkills();
     const pluginDirectories = (await readdir(join(root, 'skills'), { withFileTypes: true }))
